@@ -1,0 +1,27 @@
+.arrow-up, .arrow-down{
+	color: red;
+	text-align: center;
+}
+
+.title, .enemy-name, .action-hld, .protag-name{
+	text-align: center;
+}
+.hp-bar {
+	background-color: red;
+	border: 2px solid black;
+}
+.arrow-left, .arrow-right{
+	color: red;
+}
+
+.align-left-arw, .align-right-arw{
+	align-self: center;
+}
+
+.align-right-arw{
+	text-align: left;
+}
+
+.align-left-arw{
+	text-align: right;
+}
