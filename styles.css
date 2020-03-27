@@ -1,17 +1,29 @@
+body {
+	background-image: url("img/entry2.jpg");
+	background-size: 100%;
+	background-position: center;
+}
 .arrow-up, .arrow-down{
-	color: red;
+	color: yellow;
 	text-align: center;
+	font-family: exocet, sans-serif;
+	font-style: normal;
+	font-weight: 300;
 }
 
-.title, .enemy-name, .action-hld, .protag-name{
+.title, .enemy-name, .action-hld, .protag-name, .items-gold{
 	text-align: center;
+	font-family: exocet, sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	color: gold;
 }
 .hp-bar {
 	background-color: red;
-	border: 2px solid black;
+	border: 2px solid gold;
 }
 .arrow-left, .arrow-right{
-	color: red;
+	color: yellow;
 }
 
 .align-left-arw, .align-right-arw{
@@ -20,8 +32,14 @@
 
 .align-right-arw{
 	text-align: left;
+		font-family: exocet, sans-serif;
+	font-style: normal;
+	font-weight: 300;
 }
 
 .align-left-arw{
 	text-align: right;
+	font-family: exocet, sans-serif;
+	font-style: normal;
+	font-weight: 300;
 }
