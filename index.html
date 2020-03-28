@@ -14,22 +14,27 @@
         </div>
         <div class="row">
             <div class="col-2 offset-5 arrow-up">
-                <p>^</p>
-            </div>
-        </div>
-        <div class="row obj-plus-arrows-hld">
-            <div class="col-3 align-left-arw">
-                <p class="arrow-left"><</p>
-            </div>
-            <div class="col-6 opposing-obj-hld">
-                <img class= "col-8 offset-2 opposing-obj" src="img/opposing-obj1.jpg">
-            </div>
-            <div class="col-3 align-right-arw">
-                <p class="arrow-right">></p>
+                <img id="up-arrow" src ="img/up.png">
             </div>
         </div>
         <div class="col-12 enemy-name">
-            <p>enemy name here</p>
+            <p id="enemy-name-id">enemy name here</p>
+        </div>
+        <div class="row obj-plus-arrows-hld">
+            <div class="col-3 align-left-arw">
+                <img id="left-arrow" src ="img/left.png">
+            </div>
+            <div class="col-6 opposing-obj-hld">
+                <img class= "col-8 offset-2 opposing-obj" id="obj-img" src="img/opposing-obj1.jpg">
+            </div>
+            <div class="col-3 align-right-arw">
+                <<img id="right-arrow" src ="img/right.png">
+            </div>
+        </div>
+        <div class="col-4 offset-4" id="en-hp-bar">
+            <div id="en-red-bar">
+            Enemy HP: 100/100
+            </div>
         </div>
         <div class="row action-hld">
             <div class="col-3 offset-3 action-one">
@@ -41,14 +46,16 @@
         </div>
         <div class="row">
             <div class="col-2 offset-5 arrow-down">
-                <p>v</p>
+                <img id="down-arrow" src ="img/down.png">
             </div>
         </div>
         <div class="col-6 offset-3 protag-name">
             <p>Protag's Name</p>
         </div>
-        <div class="col-6 offset-3 hp-bar">
+        <div class="col-6 offset-3" id="hp-bar">
+            <div id="red-bar">
             HP: 100/100
+            </div>
         </div>
         <div class="row items-gold">
             <div class="col-3 offset-3 action-one">
@@ -58,10 +65,14 @@
                 <p>Gold: 0</p>
             </div>
         </div>
+        <div class="col-2 offset-5 test-button">
+            <button id="test-button">Test Effect</button>
+        </div>
     </div>
 
 
     <script src="js/script.js"></script>
+    <script src="js/database.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
