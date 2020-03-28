@@ -51,3 +51,10 @@ body {
 #obj-img {
 	height:250px;
 }
+
+#map{
+	color: gold;
+	position: fixed;
+	right: 100px;
+	top: 50px;
+}

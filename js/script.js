@@ -7,10 +7,12 @@ var testButtonGetter = document.getElementById('test-button');
 var mainImgGetter = document.getElementById('obj-img');
 var enemyNameGetter = document.getElementById('enemy-name-id');
 var enemyHpGetter = document.getElementById('en-red-bar');
-
-
-
-
+var rightArrowGetter = document.getElementById('right-arrow');
+var leftArrowGetter = document.getElementById('left-arrow');
+var upArrowGetter = document.getElementById('up-arrow');
+var downArrowGetter = document.getElementById('down-arrow');
+var mapGetter = document.getElementById('map');
+var atkBtnGetter = document.getElementById('atk-button');
 //function to reduce the hp.
 var reduceHp = function(){
     var hpPercent = (playerInfo.currentHP/playerInfo.maxHP)*100;
@@ -23,10 +25,27 @@ var reduceHp = function(){
 }
 //function to add the monster in.
 var addMonster = function (){
-    currentEnemy.push(enemies[randomNum(0,1)]);
-    mainImgGetter.src = currentEnemy[0].url;
-    enemyNameGetter.innerText = currentEnemy[0].name;
-    enemyHpGetter.innerText = "HP:" + currentEnemy[0].enCurrentHP + "/" + currentEnemy[0].enMaxHP;
+    if (currentEnemy.length === 0){
+        currentEnemy.push(enemies[randomNum(0,1)]);
+        console.log("current enemy: " + currentEnemy[0].name);
+        mainImgGetter.src = currentEnemy[0].url;
+        enemyNameGetter.innerText = currentEnemy[0].name;
+        enemyHpGetter.innerText = "HP:" + currentEnemy[0].enCurrentHP + "/" + currentEnemy[0].enMaxHP;
+    } else if (currentEnemy.length > 0){
+        currentEnemy.pop();
+        currentEnemy.push(enemies[randomNum(0,1)]);
+        console.log("current enemy: " + currentEnemy[0].name);
+        mainImgGetter.src = currentEnemy[0].url;
+        enemyNameGetter.innerText = currentEnemy[0].name;
+        enemyHpGetter.innerText = "HP:" + currentEnemy[0].enCurrentHP + "/" + currentEnemy[0].enMaxHP;
+    } if (currentMap == 2.2){
+        currentEnemy.pop();
+        currentEnemy.push(enemies[2]);
+        console.log("current enemy: " + currentEnemy[0].name);
+        mainImgGetter.src = currentEnemy[0].url;
+        enemyNameGetter.innerText = currentEnemy[0].name;
+        enemyHpGetter.innerText = "HP:" + currentEnemy[0].enCurrentHP + "/" + currentEnemy[0].enMaxHP;
+    }
 };
 //function to reduce enemy hp
 var reduceEnemyHp = function(){
@@ -38,4 +57,43 @@ var reduceEnemyHp = function(){
         enemyHpGetter.style.backgroundColor = "gold";
     }
 }
+var updateMap = function (){
+    mapGetter.innerText = "Map: " + currentMap;
+}
+
+var attackEnemy = function (){
+currentEnemy[0].enCurrentHP = currentEnemy[0].enCurrentHP - playerInfo.attack;
+reduceEnemyHp();
+}
+
+var upArrow = function(){
+currentMap = (Math.round((currentMap + 1) * 10) / 10);
+updateMap();
+addMonster();
+}
+var downArrow = function(){
+currentMap = (Math.round((currentMap - 1) * 10) / 10);
+updateMap();
+addMonster();
+}
+var leftArrow = function(){
+currentMap = (Math.round((currentMap - 0.1) * 10) / 10);
+updateMap();
+addMonster();
+}
+var rightArrow = function(){
+currentMap = (Math.round((currentMap + 0.1) * 10) / 10);
+updateMap();
+addMonster();
+}
+
+
+
+
+
 testButtonGetter.addEventListener('click', reduceEnemyHp)
+rightArrowGetter.addEventListener('click', rightArrow)
+leftArrowGetter.addEventListener('click', leftArrow)
+upArrowGetter.addEventListener('click', upArrow)
+downArrowGetter.addEventListener('click', downArrow)
+atkBtnGetter.addEventListener('click', attackEnemy)

@@ -6,14 +6,7 @@ var randomNum = function (min, max) {
 
 var currentMap = 0.2;
 console.log("current map: " + currentMap);
-var currentEnemy = [    {
-        name: "Skeleton Warrior",
-        enCurrentHP: 40,
-        enMaxHP: 40,
-        enAttack: 7,
-        goldDropped : randomNum(30,70),
-        url: "img/skeleton.jpg"
-    }];
+var currentEnemy = [];
 
 var playerInfo = {
     name: "Traveler",
@@ -46,16 +39,16 @@ var enemies = [
         enAttack: 7,
         goldDropped : randomNum(30,70),
         url: "img/skeleton.jpg"
-    }
+    },
+        {
+        name: "Shadow",
+        enCurrentHP: 150,
+        enMaxHP: 150,
+        enAttack: 10,
+        goldDropped : randomNum(300,700),
+        url: "img/boss.jpg"
+    },
 ];
-
-var boss = {
-    Name: "Shadow",
-    enCurrentHP: 200,
-    enMaxHP: 200,
-    enAttack: 3,
-    goldDropped : randomNum(5000,10000)
-}
 
 var shopItems = [
     {
@@ -82,18 +75,3 @@ var shopItems = [
         name: "Shadow room's Key",
     }
 ];
-
-
-console.log("database name: " + playerInfo.name);
-console.log("database currentHP: " + playerInfo.currentHP);
-console.log("database maxHP: " + playerInfo.maxHP);
-console.log("database gold: " + playerInfo.gold);
-console.log("database equipped: " + playerInfo.equipped.weapon);
-console.log("database equippedAr: " + playerInfo.equipped.armor);
-console.log("database potions: " + playerInfo.inventory.potions);
-console.log("database keys: " + playerInfo.inventory.key);
-console.log("============database============");
-
-for (i=0; i<enemies.length; i++){
-console.log(enemies[i].name);
-};
