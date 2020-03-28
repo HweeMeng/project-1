@@ -18,12 +18,21 @@ body {
 	font-weight: 300;
 	color: gold;
 }
-#hp-bar, #en-hp-bar {
+#hp-bar{
 	background-color: gold;
 	border: solid gold;
 	padding: 1px 3px;
 }
-#red-bar, #en-red-bar{
+#red-bar{
+	background-color: red;
+	padding-left: 5px;
+}
+#en-hp-bar {
+	background-color: gold;
+	border: solid gold;
+	padding: 1px 3px;
+}
+#en-red-bar{
 	background-color: red;
 	padding-left: 5px;
 }
@@ -57,4 +66,8 @@ body {
 	position: fixed;
 	right: 100px;
 	top: 50px;
+}
+
+.hidden {
+		visibility: hidden;
 }
