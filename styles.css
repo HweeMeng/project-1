@@ -71,3 +71,7 @@ body {
 .hidden {
 		visibility: hidden;
 }
+
+#opposing-obj-hld{
+	align-items: center;
+}

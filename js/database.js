@@ -11,17 +11,16 @@ var currentEnemy = [];
 
 var playerInfo = {
     name: "Traveler",
-    currentHP: 100,
-    maxHP: 100,
+    currentHP: 150,
+    maxHP: 150,
     gold: 0,
-    attack: 5,
+    attack: 7,
     equipped: {
                 weapon: "",
                 armor: "",
     },
-    inventory: {
-
-    }
+    potions: 3,
+    bossKey: 0,
 };
 
 var enemies = [
@@ -49,30 +48,47 @@ var enemies = [
         goldDropped : randomNum(300,700),
         url: "img/boss.jpg"
     },
+        {
+        name: "Waiting Room",
+        enCurrentHP: 0,
+        enMaxHP: 0,
+        enAttack: 0,
+        goldDropped : 0,
+        url: "img/boss.jpg"
+    },
+        {
+        name: "Big Boss",
+        enCurrentHP: 300,
+        enMaxHP: 300,
+        enAttack: 20,
+        goldDropped : randomNum(300,700),
+        url: "img/boss.jpg"
+    },
 ];
 
 var shopItems = [
     {
         name: "Dagger",
         addAtk: 10,
+        price: 500
     },
     {
         name: "Sword",
         addAtk: 20,
+        price: 2000
     },
     {
         name: "Sledgehammer",
         addAtk: 50,
+        price: 10000
     },
     {
-        name: "Potion 1",
-        recHP: 20,
+        name: "Potion",
+        recHP: 30,
+        price: 100
     },
     {
-        name: "Potion 2",
-        recHP: 50,
-    },
-    {
-        name: "Shadow room's Key",
+        name: "Boss room's Key",
+        price: 2500
     }
 ];
