@@ -4,7 +4,8 @@ var randomNum = function (min, max) {
   return Math.round(Math.random() * (max - min) ) + min;
 };
 
-var currentMap = 0.2;
+var currentMap = 0.2; // co-ordinates of map is y.x
+
 console.log("current map: " + currentMap);
 var currentEnemy = [];
 

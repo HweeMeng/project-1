@@ -20,10 +20,12 @@ var goldAmtGetter = document.getElementById('gold-amt');
 var reduceHp = function(){
     var hpPercent = (playerInfo.currentHP/playerInfo.maxHP)*100;
     hpBarGetter.style.width = hpPercent + "%";
-    playerInfo.currentHP = (playerInfo.currentHP - 2); // here to change the damage source.
+    playerInfo.currentHP = (playerInfo.currentHP - currentEnemy[0].enAttack); // here to change the damage source.
     hpBarGetter.innerText = "HP: " + playerInfo.currentHP + "/" + playerInfo.maxHP;
     if (playerInfo.currentHP === 0) {
         hpBarGetter.style.backgroundColor = "gold";
+        document.body.innerHTML="";
+        alert("Game Over!")
     }
 }
 //function to add the monster in.
@@ -66,11 +68,14 @@ var reduceEnemyHp = function(){
         enemyHpGetter.style.backgroundColor = "gold";
         playerInfo.gold = playerInfo.gold + currentEnemy[0].goldDropped;
         goldAmtGetter.innerText = "Gold: " + playerInfo.gold;
-        currentEnemy.pop()
+        currentEnemy[0].enCurrentHP = currentEnemy[0].enMaxHP;
+        currentEnemy.pop();
         mainImgGetter.src="img/opposing-obj1.jpg"
         clearScreen();
     }
 }
+
+// need to find out why updates the main enemy hp rather than current mob hp
 
 var clearScreen = function(){
     enemyNameGetter.classList.add('hidden');
@@ -95,6 +100,7 @@ var updateMap = function (){
 var attackEnemy = function (){
 currentEnemy[0].enCurrentHP = currentEnemy[0].enCurrentHP - playerInfo.attack;
 reduceEnemyHp();
+reduceHp();
 }
 
 var upArrow = function(){
