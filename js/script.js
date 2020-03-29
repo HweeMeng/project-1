@@ -92,9 +92,44 @@ var unClearScreen = function(){
     atkBtnGetter.classList.remove('hidden');
     enemyHpGetter.style.width = "100%";
 }
+
+var removeBtnHidden = function (){
+rightArrowGetter.classList.remove('hidden');
+leftArrowGetter.classList.remove('hidden');
+upArrowGetter.classList.remove('hidden');
+downArrowGetter.classList.remove('hidden');
+}
 //id="enemy-name-id"//"en-red-bar"//".row action-hld"//atk-button
 var updateMap = function (){
+    removeBtnHidden()
     mapGetter.innerText = "Map: " + currentMap;
+    if (currentMap > 0.99 && currentMap < 1.4){
+        downArrowGetter.classList.add('hidden');
+        if (currentMap == 1.1){
+            leftArrowGetter.classList.add('hidden');
+        }
+        if (currentMap == 1.3) {
+            rightArrowGetter.classList.add('hidden');
+        }
+    }else if (currentMap > 2.99 && currentMap < 3.4){
+        upArrowGetter.classList.add('hidden')
+            if (currentMap == 3.1){
+            leftArrowGetter.classList.add('hidden');
+            }
+            if (currentMap == 3.2){
+            removeBtnHidden()
+            }
+            if (currentMap == 3.3){
+            rightArrowGetter.classList.add('hidden');
+            }
+    }else if(currentMap > 1.99 && currentMap < 2.4){
+            if(currentMap == 2.1){
+                leftArrowGetter.classList.add('hidden');
+            }
+            if(currentMap == 2.3){
+                rightArrowGetter.classList.add('hidden');
+            }
+    }
 }
 
 var attackEnemy = function (){
