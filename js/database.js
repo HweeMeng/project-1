@@ -13,7 +13,7 @@ var playerInfo = {
     name: "Traveler",
     currentHP: 150,
     maxHP: 150,
-    gold: 0,
+    gold: 2500,
     attack: 7,
     equipped: {
                 weapon: "",
@@ -30,7 +30,7 @@ var enemies = [
         enMaxHP: 20,
         enAttack: 3,
         goldDropped : randomNum(15,40),
-        url: ""
+        url: "img/goblin.jpg"
     },
     {
         name: "Skeleton Warrior",

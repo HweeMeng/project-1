@@ -58,7 +58,7 @@ body {
 	font-weight: 300;
 }
 #obj-img {
-	height:300px;
+	height:350px;
 }
 
 #map{
@@ -74,4 +74,7 @@ body {
 
 #opposing-obj-hld{
 	align-items: center;
+}
+#enemy-name-id {
+	padding-top: 5px;
 }

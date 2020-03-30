@@ -186,6 +186,29 @@ var potUsed = function(){
     }
 }
 
+var clickBuyPot = function(){
+    if(playerInfo.gold>=100){
+        playerInfo.potions = playerInfo.potions +1;
+        playerInfo.gold = playerInfo.gold - 100;
+        goldAmtGetter.innerText = "Gold: " + playerInfo.gold;
+        hpPotGetter.innerHTML = ": " + playerInfo.potions;
+    } else {
+        alert("You have not enough gold!");
+    }
+}
+
+var clickBuyKey = function(){
+    if(playerInfo.gold>=2500 && playerInfo.bossKey === 0){
+        playerInfo.bossKey = playerInfo.bossKey +1;
+        playerInfo.gold = playerInfo.gold - 2500;
+        goldAmtGetter.innerText = "Gold: " + playerInfo.gold;
+        keyGetter = document.getElementById("buy-key");
+        keyGetter.src = "";
+    } else {
+        alert("You have not enough gold!");
+    }
+}
+
 var enterShop = function(){
     mainImgGetter.classList.remove('col-8');
     mainImgGetter.classList.remove('offset-2');
@@ -193,16 +216,23 @@ var enterShop = function(){
     mainImgGetter.classList.add('offset-3');
     mainImgGetter.classList.add('buy-pot');
     mainImgGetter.src = "img/hppot-shop.png";
-    var createKey = document.createElement('img');
-    createKey.classList.add("col-3")
-    createKey.src = "img/key.png";
-    createKey.id = "buy-key"
-    createKey.innerText = "Price: 2500g";
-    opposingObjHldGetter.appendChild(createKey);
+    mainImgGetter.style.height = "120px";
+    if(playerInfo.bossKey == 0){
+        var createKey = document.createElement('img');
+        createKey.classList.add("col-3")
+        createKey.src = "img/key.png";
+        createKey.id = "buy-key"
+        createKey.innerText = "Price: 2500g";
+        opposingObjHldGetter.appendChild(createKey);
+        var keyIdGetter = document.getElementById('buy-key');
+        keyIdGetter.addEventListener('click', clickBuyKey);
+    }
+    mainImgGetter.addEventListener('click', clickBuyPot);
 };
 
 var leaveShop = function(){
 //img class= "col-8 offset-2 opposing-obj" id="obj-img" src="img/opposing-obj1.jpg">
+    mainImgGetter.style.height = "350px";
     mainImgGetter.classList.add('col-8');
     mainImgGetter.classList.add('offset-2');
     mainImgGetter.classList.remove('col-3');
