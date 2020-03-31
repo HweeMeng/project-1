@@ -30,7 +30,7 @@ var enemies = [
         enMaxHP: 20,
         enAttack: 3,
         goldDropped : randomNum(15,40),
-        url: "img/goblin.jpg"
+        url: "img/goblin.jpeg"
     },
     {
         name: "Skeleton Warrior",

@@ -78,3 +78,11 @@ body {
 #enemy-name-id {
 	padding-top: 5px;
 }
+
+#enterName{
+	width:100%;
+}
+
+.display-none{
+	display: none;
+}

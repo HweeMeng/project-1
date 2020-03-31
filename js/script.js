@@ -18,7 +18,41 @@ var goldAmtGetter = document.getElementById('gold-amt');
 var hpPotGetter = document.getElementById('hp-pot-text');
 var hpPotImgGetter = document.getElementById('hp-pot');
 var opposingObjHldGetter = document.getElementById('opposing-obj-hld');
+var protagNameGetter = document.getElementById('protag-namey')
 
+var firstClearScreen = function(){
+    enemyNameGetter.classList.add('hidden');
+    enemyHpHldrGetter.classList.add('hidden');
+    enemyHpGetter.classList.add('hidden');
+    atkBtnGetter.classList.add('hidden');
+    downArrowGetter.classList.add('hidden');
+    leftArrowGetter.classList.add('hidden');
+    rightArrowGetter.classList.add('hidden');
+}
+
+var removeImg = function(){
+    mainImgGetter.classList.add('display-none');
+    var createInput = document.createElement('input');
+    createInput.placeholder = "Please enter your name and press the up arrow button ^";
+    createInput.id = "enterName";
+    opposingObjHldGetter.appendChild(createInput);
+}
+removeImg()
+firstClearScreen();
+
+var removeInput = function (){
+    opposingObjHldGetter.removeChild(document.getElementById('enterName'));
+    mainImgGetter.classList.remove('display-none');
+}
+
+var insertName = function(){
+    var nameGetter = document.getElementById('enterName');
+    playerInfo.name = nameGetter.value;
+    protagNameGetter.innerText = playerInfo.name;
+    removeInput();
+}
+
+//"col-8 offset-2 opposing-obj"
 
 //function to reduce the hp.
 hpPotGetter.innerHTML = ": " + playerInfo.potions;
@@ -254,6 +288,10 @@ var upArrow = function(){
 currentMap = (Math.round((currentMap + 1) * 10) / 10);
 updateMap();
 addMonster();
+    if(currentMap == 1.2){
+    insertName();
+    addNewImg()
+    };
 }
 var downArrow = function(){
 currentMap = (Math.round((currentMap - 1) * 10) / 10);
@@ -284,6 +322,9 @@ var rightArrow = function(){
     addMonster();
     }
 }
+
+
+
 
 rightArrowGetter.addEventListener('click', rightArrow)
 leftArrowGetter.addEventListener('click', leftArrow)
