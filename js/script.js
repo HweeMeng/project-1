@@ -31,7 +31,6 @@ var firstClearScreen = function(){
 }
 
 var removeImg = function(){
-    mainImgGetter.classList.add('display-none');
     var createInput = document.createElement('input');
     createInput.placeholder = "Please enter your name and press the up arrow button ^";
     createInput.id = "enterName";
@@ -42,7 +41,6 @@ firstClearScreen();
 
 var removeInput = function (){
     opposingObjHldGetter.removeChild(document.getElementById('enterName'));
-    mainImgGetter.classList.remove('display-none');
 }
 
 var insertName = function(){
@@ -117,15 +115,16 @@ var addMonster = function (){
 };
 //function to reduce enemy hp
 var reduceEnemyHp = function(){
-    var hpPercent = (currentEnemy[0].enCurrentHP/currentEnemy[0].enMaxHP)*100;
+    currentEnemy[0].enCurrentHP = (currentEnemy[0].enCurrentHP - randomNum(playerInfo.attack,playerInfo.attack+5));
+var hpPercent = (currentEnemy[0].enCurrentHP/currentEnemy[0].enMaxHP)*100;
     enemyHpGetter.style.width = hpPercent + "%";
-    currentEnemy[0].enCurrentHP = (currentEnemy[0].enCurrentHP - playerInfo.attack);
     enemyHpGetter.innerText = "HP:" + currentEnemy[0].enCurrentHP + "/" + currentEnemy[0].enMaxHP;
     if (currentEnemy[0].enCurrentHP <= 0) {
         enemyHpGetter.style.backgroundColor = "gold";
         playerInfo.gold = playerInfo.gold + currentEnemy[0].goldDropped;
         goldAmtGetter.innerText = "Gold: " + playerInfo.gold;
         currentEnemy[0].enCurrentHP = currentEnemy[0].enMaxHP;
+        alert("you have defeated " + currentEnemy[0].name + " and have gained " + currentEnemy[0].goldDropped + " golds!");
         currentEnemy.pop();
         mainImgGetter.src="img/opposing-obj1.jpg"
         clearScreen();
@@ -273,13 +272,12 @@ var leaveShop = function(){
     mainImgGetter.classList.remove('offset-3');
     mainImgGetter.classList.remove('buy-pot');
     mainImgGetter.id ="obj-img";
-    mainImgGetter.src = "img/opposing-obj1.jpg"
+    mainImgGetter.src = "img/waiting-room.jpg"
     keyGetter = document.getElementById("buy-key");
     opposingObjHldGetter.removeChild(keyGetter);
 }
 
 var attackEnemy = function (){
-currentEnemy[0].enCurrentHP = currentEnemy[0].enCurrentHP - playerInfo.attack;
 reduceEnemyHp();
 reduceHp();
 }
