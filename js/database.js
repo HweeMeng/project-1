@@ -13,12 +13,12 @@ var playerInfo = {
     currentHP: 150,
     maxHP: 150,
     gold: 1000,
-    attack: 15,
+    attack: 20,
     equipped: {
                 weapon: "",
                 armor: "",
     },
-    potions: 3,
+    potions: 5,
     bossKey: 0,
 };
 
@@ -27,24 +27,24 @@ var enemies = [
         name: "Goblin",
         enCurrentHP: 20,
         enMaxHP: 20,
-        enAttack: randomNum(2,5),
-        goldDropped : randomNum(15,40),
+        enAttack: 3,
+        goldDropped : 50,
         url: "img/goblin.jpeg"
     },
     {
         name: "Skeleton Warrior",
         enCurrentHP: 40,
         enMaxHP: 40,
-        enAttack: randomNum(5,10),
-        goldDropped : randomNum(30,70),
+        enAttack: 7,
+        goldDropped : 100,
         url: "img/skeleton.jpg"
     },
         {
         name: "Shadow",
         enCurrentHP: 150,
         enMaxHP: 150,
-        enAttack: randomNum(10,20),
-        goldDropped : randomNum(700,1200),
+        enAttack: 12,
+        goldDropped : 800,
         url: "img/boss.jpg"
     },
         {
@@ -59,8 +59,8 @@ var enemies = [
         name: "Big Boss",
         enCurrentHP: 300,
         enMaxHP: 300,
-        enAttack: randomNum(20,25),
-        goldDropped : randomNum(300,700),
+        enAttack: 20,
+        goldDropped : 3000,
         url: "img/big-boss.jpg"
     },
 ];

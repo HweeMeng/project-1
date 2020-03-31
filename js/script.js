@@ -57,7 +57,7 @@ hpPotGetter.innerHTML = ": " + playerInfo.potions;
 var reduceHp = function(){
     var hpPercent = (playerInfo.currentHP/playerInfo.maxHP)*100;
     hpBarGetter.style.width = hpPercent + "%";
-    playerInfo.currentHP = (playerInfo.currentHP - currentEnemy[0].enAttack); // here to change the damage source.
+    playerInfo.currentHP = (playerInfo.currentHP - randomNum(currentEnemy[0].enAttack, currentEnemy[0].enAttack+5)); // here to change the damage source.
     hpBarGetter.innerText = "HP: " + playerInfo.currentHP + "/" + playerInfo.maxHP;
     if (playerInfo.currentHP < 0) {
         hpBarGetter.style.backgroundColor = "gold";
@@ -121,13 +121,16 @@ var hpPercent = (currentEnemy[0].enCurrentHP/currentEnemy[0].enMaxHP)*100;
     enemyHpGetter.innerText = "HP:" + currentEnemy[0].enCurrentHP + "/" + currentEnemy[0].enMaxHP;
     if (currentEnemy[0].enCurrentHP <= 0) {
         enemyHpGetter.style.backgroundColor = "gold";
-        playerInfo.gold = playerInfo.gold + currentEnemy[0].goldDropped;
+        playerInfo.gold = playerInfo.gold + randomNum(currentEnemy[0].goldDropped, currentEnemy[0].goldDropped+200);
         goldAmtGetter.innerText = "Gold: " + playerInfo.gold;
         currentEnemy[0].enCurrentHP = currentEnemy[0].enMaxHP;
-        alert("you have defeated " + currentEnemy[0].name + " and have gained " + currentEnemy[0].goldDropped + " golds!");
+        alert("you have defeated " + currentEnemy[0].name + " You now have " + playerInfo.gold + " golds!");
         currentEnemy.pop();
         mainImgGetter.src="img/opposing-obj1.jpg"
         clearScreen();
+        if(currentMap == 5.2){
+                    alert("you have defeated " + currentEnemy[0].name + " and have gained " + currentEnemy[0].goldDropped + " golds! Congratulations on clearing the game!");
+        }
     }
 }
 
@@ -158,37 +161,50 @@ downArrowGetter.classList.remove('hidden');
 //id="enemy-name-id"//"en-red-bar"//".row action-hld"//atk-button
 var updateMap = function (){
     removeBtnHidden()
-    mapGetter.innerText = "Map: " + currentMap;
     if (currentMap > 0.99 && currentMap < 1.4){
         downArrowGetter.classList.add('hidden');
         if (currentMap == 1.1){
             leftArrowGetter.classList.add('hidden');
+            mapGetter.src = "map/1-1.png"
+        }
+        if (currentMap == 1.2){
+            mapGetter.src = "map/1-2.png"
         }
         if (currentMap == 1.3) {
             rightArrowGetter.classList.add('hidden');
+            mapGetter.src = "map/1-3.png"
         }
     }else if (currentMap > 2.99 && currentMap < 3.4){
         upArrowGetter.classList.add('hidden')
             if (currentMap == 3.1){
             leftArrowGetter.classList.add('hidden');
+            mapGetter.src = "map/3-1.png"
             }
             if (currentMap == 3.2){
             removeBtnHidden()
+            mapGetter.src = "map/3-2.png"
             }
             if (currentMap == 3.3){
             rightArrowGetter.classList.add('hidden');
+            mapGetter.src = "map/3-3.png"
             }
     }else if(currentMap > 1.99 && currentMap < 2.4){
             if(currentMap == 2.1){
                 leftArrowGetter.classList.add('hidden');
+                mapGetter.src = "map/2-1.png"
+            }
+            if(currentMap == 2.2){
+                mapGetter.src = "map/2-2.png"
             }
             if(currentMap == 2.3){
                 rightArrowGetter.classList.add('hidden');
+                mapGetter.src = "map/2-3.png"
             }
     }else if(currentMap > 3.99 && currentMap < 4.4){
             if(currentMap == 4.2){
                 leftArrowGetter.classList.add('hidden');
                 upArrowGetter.classList.add('hidden');
+                mapGetter.src = "map/4-2.png"
                 if(playerInfo.bossKey > 0 ) {
                     upArrowGetter.classList.remove('hidden');
                 }
@@ -197,11 +213,13 @@ var updateMap = function (){
                 upArrowGetter.classList.add('hidden');
                 rightArrowGetter.classList.add('hidden');
                 downArrowGetter.classList.add('hidden');
+                mapGetter.src = "map/4-3.png"
             }
     }else if (currentMap == 5.2){
             leftArrowGetter.classList.add('hidden');
             upArrowGetter.classList.add('hidden');
             rightArrowGetter.classList.add('hidden');
+            mapGetter.src = "map/5-2.png"
     }
 };
 
