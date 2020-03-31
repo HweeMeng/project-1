@@ -1,7 +1,7 @@
 body {
 	background-image: url("img/entry2.jpg");
 	background-size: 100%;
-	background-position: center;
+	background-position: inherit;
 }
 .arrow-up, .arrow-down{
 	color: yellow;

@@ -62,6 +62,7 @@ var reduceHp = function(){
     if (playerInfo.currentHP < 0) {
         hpBarGetter.style.backgroundColor = "gold";
         document.body.innerHTML="";
+        document.body.style.backgroundPosition = "inherit";
         alert("Game Over!")
     }
 }
