@@ -1,0 +1,42 @@
+Approach and Process
+What in my process and approach to this project would I do differently next time?
+Focus needs to be more on the outlook, user experience, transition, animation, style standardization rather than on functionality.
+
+Scoping should be done better. Breaking down each of the parts to much smaller steps. Thinking about each movement, clicks, what will it do, how should it look etc.
+
+Further, design portion needs to think of it much more thoroughly before proceeding. E.g. styling, what kind of theme, what kind of mood/setting.
+
+What in my process and approach to this project went well that I would repeat next time?
+
+Scoping at the start is good for me. I will continue to do that as well. But just need to be more in-depth and clearer.
+--
+
+Code and Code Design
+What in my code and program design in the project would I do differently next time?
+Less hard coding. More scalable codes.
+
+Perhaps make the whole project more modular. Better to break each part of the project down, insert and remove at will. More importantly is to write the codes in such a way that even if I remove/add/change parts of CSS and/or actions, it will not affect the logic of the codes.
+
+What in my code and program design in the project went well? Is there anything I would do the same next time?
+
+If the codes are complex/long, separate the codes into 2 js files, so that it can be separated cleanly. Also need to be clear which js file is linked first before the other.
+
+Almost didn’t need to verify the logic codes.
+
+For each, please include code examples.
+Code snippet up to 20 lines.
+
+Will need to refer to sublime.
+
+Code design documents or architecture drawings / diagrams.
+Will show in the webcam.
+
+WDI Unit 1 Post Mortem
+What habits did I use during this unit that helped me?
+Planning is extremely important and saves a lot of time.
+After completing each step of code, save and verify.
+
+What habits did I have during this unit that I can improve on?
+More in-depth planning. Like breaking the parts to an even smaller portions to help with writing the codes better. Also to be able to move on to other sections rather than getting stuck at the same place and being unable to move on.
+How is the overall level of the course during this unit? (instruction, course materials, etc.)
+All are good so far. The instructions are clear and materials covers and teaches us the useful stuffs also, it is not so fast/hard such that it is un-catchable.
